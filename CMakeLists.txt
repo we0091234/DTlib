@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.10.0)
 project(smartPoint)
-aux_source_directory(./ SRCLIST)
-add_executable(smartPoint ${SRCLIST})
+# aux_source_directory(./ SRCLIST)
+# add_executable(smartPoint ${SRCLIST})
+add_executable(smartPoint  linkNode.cpp)
+add_definitions(-O0)

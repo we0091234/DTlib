@@ -11,10 +11,15 @@ class Test
     {
         cout<<"构造函数调用"<<endl;
     }
+     void show()
+    {
+        cout<<"you are shabi"<<endl;
+    }
     ~Test()
     {
         cout<<"析构函数调用"<<endl;
     }
+   
 };
 
 
@@ -25,7 +30,8 @@ int main()
     SmartPointer<Test> sma=new Test();
     SmartPointer<Test> newsma;
     newsma=sma;
-    cout<<"小雷是人才"<<endl;
+    // cout<<"小雷是人才"<<endl;
+    (*newsma).show();
     cout<<sma.isNull()<<endl;
     cout<<newsma.isNull()<<endl;
     return 0;
