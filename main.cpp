@@ -1,4 +1,5 @@
 #include "smartpointer.h"
+#include "Exception.h"
 // #include <iostream>
 #include <cstdlib>
 using namespace std;
@@ -23,7 +24,7 @@ class Test
 };
 
 
-int main()
+int main1()
 {
     // Test *p = new Test();
     // SmartPointer<Test> hah
@@ -34,5 +35,20 @@ int main()
     (*newsma).show();
     cout<<sma.isNull()<<endl;
     cout<<newsma.isNull()<<endl;
+    return 0;
+}
+
+int main()
+{
+    try
+    {
+        THROW_EXCEPTION(Exception,"test");
+    }
+    catch(const Exception &e)
+    {
+        cout<<"catch Exception &e"<<endl;
+        cout<<e.message()<<endl;
+        cout<<e.location()<<endl;
+    }
     return 0;
 }
