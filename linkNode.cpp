@@ -38,6 +38,24 @@ void show_node(Lnode *pHead)
    }
 }
 
+void deleteNode (Lnode *pHead,int val)
+{
+     auto pTmp = pHead->next;
+     auto qTmp = pHead;
+     while(pTmp)
+     {
+         if(pTmp->value ==val)
+         {
+             
+             qTmp->next=pTmp->next;
+             delete  pTmp;
+         }
+         pTmp=pTmp->next;
+         qTmp=qTmp ->next;
+     }
+
+}
+
 int main(int argc, char ** argv) 
 {
     srand(time(NULL));
@@ -60,20 +78,8 @@ int main(int argc, char ** argv)
    
      show_node(pHead);
 
-     auto pTmp = pHead->next;
-     auto qTmp = pHead;
-     while(pTmp)
-     {
-         if(pTmp->value == 5)
-         {
-             
-             qTmp->next=pTmp->next;
-             delete  pTmp;
-         }
-         pTmp=pTmp->next;
-         qTmp=qTmp ->next;
-     }
-
+    
+deleteNode(pHead,6);
      show_node(pHead);
 //    cout<<endl;
 
