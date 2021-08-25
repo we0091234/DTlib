@@ -23,30 +23,25 @@ class Test
    
 };
 
-
-int main1()
+float divedeMy(float a,float b)
 {
-    // Test *p = new Test();
-    // SmartPointer<Test> hah
-    SmartPointer<Test> sma=new Test();
-    SmartPointer<Test> newsma;
-    newsma=sma;
-    // cout<<"小雷是人才"<<endl;
-    (*newsma).show();
-    cout<<sma.isNull()<<endl;
-    cout<<newsma.isNull()<<endl;
-    return 0;
+    if (abs(b)<0.000000001)
+    {
+        THROW_EXCEPTION(ArithmeticException,"divide by zero");
+    }
+    else
+    return a/b;
 }
-
 int main()
 {
     try
     {
-        THROW_EXCEPTION(Exception,"test");
+           float result = divedeMy(2,10);
+           cout<<result<<endl;
+            
     }
-    catch(const Exception &e)
+    catch(Exception &e)
     {
-        cout<<"catch Exception &e"<<endl;
         cout<<e.message()<<endl;
         cout<<e.location()<<endl;
     }

@@ -29,7 +29,7 @@ namespace DTLib
 
     Exception::Exception(const  char *file,int line)
     {
-        init(NULL,file,0);
+        init(NULL,file,line);
     }
      Exception::Exception(const char *message,const char *file,int line)
      {
@@ -49,6 +49,7 @@ namespace DTLib
              m_message=strdup(e.m_message);
              m_location=strdup(e.m_location);
          }
+         return *this;
      }
 
      const char *Exception::message() const
