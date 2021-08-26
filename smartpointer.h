@@ -1,5 +1,5 @@
 #ifndef _SMARTPOINTER_H
-#define _SMARTPOINTER_
+#define _SMARTPOINTER_H
 #include <iostream>
 namespace DTLib
 {
