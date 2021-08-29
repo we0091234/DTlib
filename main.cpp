@@ -51,27 +51,41 @@
 #include <iostream>
 #include <memory>
 #include "Object.h"
+#include "smartpointer.h"
+#include "List.h"
+#include "seqList.h"
+#include "StaticList.h"
+#include "DynamicList.h"
 using namespace std;
 using namespace DTLib;
-class A:public Object
+void show(DynamicList<int> &l)
 {
-    public:
-    A()
-    {
-        cout<<"构造函数"<<endl;
-    }
-    ~A()
-    {
-        cout<<"析构函数"<<endl;
-    }
-    int i;
-};
+   for(int i = 0; i<l.length();i++)
+   {
+        cout<<l[i]<<" ";
+   }
+   cout<<endl;
+}
 
 int main()
 {
-//    auto ptr = make_shared<A>;
-   // A *ptr1 = new A();
-   Object *pa = new A[10];
-   delete [] pa;
+//   StaticList<int ,5> l;
+  DynamicList<int >l(5);
+  for(int i = 0; i<5; i++)
+  {
+      l.insert(i,i);
+  }
+  show(l);
+  l.remove(4);
+  show(l);
+  l.resize(10);
+  l.insert(4,50);
+  l.insert(5,60);
+   l.insert(6,50);
+  l.insert(7,60);
+   l.insert(8,50);
+   cout<<l.insert(9,60)<<endl;
+  cout<< l.insert(10,60)<<endl;
+ show(l);
     return 0;
 }

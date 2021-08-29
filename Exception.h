@@ -2,11 +2,11 @@
 #define _EXCEPTION_H
 #include <cstring>
 #include <iostream>
-
+#include "Object.h"
 namespace DTLib
 {
     #define THROW_EXCEPTION(e,m)(throw e(m,__FILE__,__LINE__))
-class Exception
+class Exception:public Object
 {
     protected:
     char *m_message;
@@ -38,9 +38,6 @@ class ArithmeticException : public Exception
 
         return *this;
     }
-  
-
-
 };
 }
 
